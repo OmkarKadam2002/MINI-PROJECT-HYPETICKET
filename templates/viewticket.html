@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="static\viewticket.css">
+</head>
+<body>
+    <div class="main-body">
+        <h2 align="center">Visiting Ticket</h2><br><br>
+        {% csrf_token %}
+        {% for x in mymembers %}
+        <p class="label1" id="value">Name:&nbsp;{{ x.name }}</p>
+        <input type="text" class="name" readonly value="Name:{{ x.name }}" style="display:none;">
+        <p class="label">Number:&nbsp;{{ x.number }}</p><br>
+        <input type="text" class="number" readonly value="Number:{{ x.number }}" style="display:none;">
+        <p class="label">Email:&nbsp;{{ x.email_id }}</p><br>
+        <input type="text" class="email" readonly value="Email:{{ x.email_id }}" style="display:none;">
+        <p class="label1">Monument:&nbsp;{{ x.monument_name }}</p>
+        <input type="text" class="monu_name" readonly value="Monument:{{ x.monument_name }}" style="display:none;">
+        <p class="label">Location:&nbsp;{{ x.location }}</p><br>
+        <input type="text" class="location" readonly value="Location:{{ x.location }}" style="display:none;">
+        <p class="label">Date:&nbsp;{{ x.date }}</p><br>
+        <input type="text" class="date" readonly value="Date:{{ x.date }}" style="display:none;">
+        <p class="label2">No. of People:&nbsp;{{ x.count_ind }}</p>
+        <input type="text" class="count_ind" readonly value="Indian Citizens:{{ x.count_ind }}" style="display:none;">
+        <p class="label2">No. of Foreign Nationals:&nbsp;{{ x.count_for }}</p>
+        <input type="text" class="count_for" readonly value="Foreign Nationals:{{ x.count_for }}" style="display:none;">
+        <p class="label">No. of Under 15 Children:&nbsp;{{ x.count_free }}</p><br>
+        <input type="text" class="count_free" readonly value="Children Under 15:{{ x.count_free }}" style="display:none;">
+        <p class="label">Total Price(Rs.):&nbsp;{{ x.price }}</p><br>
+        <input type="text" class="price" readonly value="Total(Rs.):{{ x.price }}" style="display:none;">
+        <div class="qr-code" ></div>
+        <p style="font-size:18px;"><i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;By Being in posession of this ticket you agree that you will adhere to the policies of the jurisdiction at the monument</p>
+        {% endfor %}
+        <button class="submit-btn">Generate QR Code</button>
+        <div class="qr-img" align="center">
+            <img src="" alt="">
+        </div>
+    </div>
+    <script>
+        let input1 = document.querySelector(".name");
+        let input2 = document.querySelector(".number");
+        let input3 = document.querySelector(".email");
+        let input4 = document.querySelector(".monu_name");
+        let input5 = document.querySelector(".location");
+        let input6 = document.querySelector(".date");
+        let input7 = document.querySelector(".count_ind");
+        let input8 = document.querySelector(".count_for");
+        let input9 = document.querySelector(".count_free");
+        let input0 = document.querySelector(".price");
+        let button = document.querySelector(".submit-btn");
+        let qrImg = document.querySelector(".qr-img img");
+        button.addEventListener("click",function(){
+            let data = input1.value;
+            let data1 = input2.value;
+            let data2 = input3.value;
+            let data3 = input4.value;
+            let data4 = input5.value;
+            let data5 = input6.value;
+            let data6 = input7.value;
+            let data7 = input8.value;
+            let data8 = input9.value;
+            let data9 = input0.value;
+            let imgSrc = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+data+" \n"+data1+" \n"+data2+" \n"+data3+" \n"+data4+" \n"+data5+" \n"+data6+" \n"+data7+" \n"+data8+" \n"+data9;
+            qrImg.src=imgSrc;
+        })
+    </script>
+</body>
+</html>

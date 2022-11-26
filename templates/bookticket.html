@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="static\bookticket.css">
+</head>
+<body>
+    {% csrf_token %}
+    {% for x in mymembers %}
+        <div class="heading">
+        <h2 align="center"> <i class="fa fa-circle" aria-hidden="true"></i>&nbsp;{{x.name}}&nbsp;<i class="fa fa-circle" aria-hidden="true"></i></i></h2>
+    </div>
+    <div class="main-body-container">
+        <h4><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Description:</h4><br>
+        <pre>{{x.desc}}</pre><br>
+        <h4><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> General Terms and Conditions:</h4><br>
+        <pre>{{x.inst}}</pre><br>
+        <h4><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Location:</h4><br>
+        <pre>{{x.location}}</pre><br>
+        <h4><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> How to Reach:</h4><br>
+        <pre>{{x.reach}}</pre><br>
+        <h4><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Timings:</h4><br>
+        <pre>{{x.time}}</pre><br>
+        <form id="form-card" method="POST" action="ticket_pay" target="_blank">
+            {% csrf_token %}
+            <div class="heading-card">
+                <h5 align="center"> <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Book Your Tickets Here&nbsp;<i class="fa fa-arrow-circle-down" aria-hidden="true"></i></i></h5>
+            </div>
+            <div class="form-body">
+            <span><strong>Select The Date For Booking:</strong>&nbsp;<input type="date" id="date" class="input" name="date_booked"></span><br><br>
+            <p><strong>Entry Fees:</strong><p>
+            <span>For Indian Citizens (and also SAARC):&nbsp;<input type="text" id="price_ind" class="input" name="price_ind" value="{{x.price_ind}}" readonly>&nbsp;&nbsp;<input type="number" id="count_ind" class="input" name="count_ind" placeholder="0" required></span><br><br>
+            <span  class="space2">For Foreigners:&nbsp;<input type="text" id="price_for" class="input" name="price_for" value="{{x.price_for}}" readonly>&nbsp;&nbsp;<input type="number" id="count_for" class="input" name="count_for" placeholder="0" required></span><br><br>
+            <span  class="space1">For Children of age 15 or below:&nbsp;<input type="text" id="price_free" class="input" name="price_free" value="FREE" readonly>&nbsp;&nbsp;<input type="number" id="count_free" class="input" name="count_free" placeholder="0" required></span><br><br>
+            <span><input type="checkbox" id="agree" class="input" name="agree" value="checked" required>&nbsp;<label for="vehicle1">Agree with terms and conditions.</label></span><br>
+            <br><button type="submit" class="submit-btn">Book and Proceed towards Payment</button>
+        </div>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

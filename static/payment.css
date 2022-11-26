@@ -1,0 +1,29 @@
+:root{
+    --brown:#5B3D45;
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body{
+    background-color: #C8D5CB;
+}
+.heading{
+    background-color: #5B868D;
+    padding: 15px;
+    margin: 25px;
+    color:#3f2b31;
+}
+#price{
+    color:#3f2b31;
+    font-size: 2rem;
+}
+.stripe-button{
+    margin-left: 50px;
+}

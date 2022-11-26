@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <link rel="stylesheet" href="static\site_admin.css">
+</head>
+<body>
+    <div class="heading">
+        <h2 align="center">&nbsp;Welcome to Gateway of India&nbsp;</i></h2>
+    </div>
+    <div align="center">
+    <div style="width:600px;padding:15px;margin: 25px;" id="reader"></div>
+    <div style="width:600px;padding:15px;margin: 25px;" id="result"></div>
+    <button class="submit-btn">Validate Ticket Data</button>
+    </div>
+    <script>
+        const scanner = new Html5QrcodeScanner('reader', {
+            qrbox: {
+                width:275,
+                height:275,
+            },
+            fps:20,
+        });
+        scanner.render(success,error);
+
+        function success(result){
+            console.log(result);
+            document.getElementById('result').innerHTML = `
+            <p>${result}</p>`
+            ;
+            //scanner.clear();
+            //document.getElementById('reader').remove();
+        }
+        function error(err){
+            console.error(err);
+        }
+    </script>
+</body>
+</html>

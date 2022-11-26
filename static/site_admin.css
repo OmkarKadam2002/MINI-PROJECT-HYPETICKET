@@ -1,0 +1,39 @@
+:root{
+    --brown:#5B3D45;
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body{
+    background-color: #C8D5CB;
+}
+.heading{
+    background-color: #5B868D;
+    padding: 15px;
+    margin: 25px;
+    color:#3f2b31;
+}
+.submit-btn {
+    padding: 10px 30px;
+    margin: 25px;
+    cursor: pointer;
+    display: block;
+    background: black;
+    color: white;
+    border: 0;
+    outline: none;
+    position: relative;
+    top:15px;
+    /*border-radius: 30px;*/
+}
+.submit-btn:hover{
+    background-color: white;
+    color: black;
+}

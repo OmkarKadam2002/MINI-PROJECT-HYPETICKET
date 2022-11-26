@@ -1,0 +1,118 @@
+:root{
+    --brown:#5B3D45;
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+.heading #a1 {
+    color: var(--brown);
+}
+.hero {
+    height: 100%;
+    width: 100%;
+    background-color: #C8D5CB;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 380px;
+    height: 525px;
+    position: relative;
+    margin: 4% auto;
+    padding: 5px;
+    background: #5B868D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+.button-box {
+    width: 200px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0px 0px 20px 9px #203f44;
+    border-radius: 30px;
+    font-size: 15px;
+}
+.toogle-btn {
+    padding: 5px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: white;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: black;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.input-group {
+    top: 180px;
+    position:absolute;
+    width: 280px;
+    transition: .5s;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #203f44;
+    outline: none;
+    background: transparent;
+}
+.input-field::placeholder{
+    color: #203f44;
+    opacity: 0.5;
+}
+.submit-btn {
+    width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    background: #C8D5CB;
+    margin: 0px 20px;
+    border: 0;
+    outline: none;
+    position: relative;
+    top:15px;
+    /*border-radius: 30px;*/
+}
+.check-box {
+    margin: 30px 10px 30px 0px;
+    text-decoration: none;
+    font-size: 12px;
+    color:black;
+}
+.submit-btn:hover{
+    background-color: black;
+    color: white;
+}
+#log {
+    left: 50px;
+}
+#reg {
+    left: 450px;
+}

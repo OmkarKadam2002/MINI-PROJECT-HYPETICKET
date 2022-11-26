@@ -1,0 +1,125 @@
+:root{
+    --brown:#5B3D45;
+}
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body{
+    background-color: #C8D5CB;
+}
+.main{
+    height: 575px;
+    margin: 20px 20px 20px 20px;
+
+}
+.heading {
+    height: 75px;
+    padding: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
+    background-color: #5B868D;
+    border: 1px solid black;
+}
+.prf {
+    color: #3f2b31;
+}
+.wrapper{
+    margin-left: 300px;
+}
+.postnew{
+    margin-right: 15px;
+    height: 450px;
+    width: 650px;
+    background-color: #5B868D;
+}
+.postnew .prf{
+    padding-top: 20px;
+}
+.old{
+    margin-left: 15px;
+    height: 450px;
+    width: 650px;
+    background-color: #5B868D;
+}
+.wrapper .prf{
+    margin: 15px;
+}
+.input-field{
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #203f44;
+    padding: 10px 0;
+    margin: 5px 0;
+}
+.input-field::placeholder{
+    color: #203f44;
+    opacity: 0.5;
+}
+.input-group{
+    margin: 10px;
+    padding-left:30px ;
+}
+#box{
+    width: 550px;
+}
+.submit-btn {
+    width: 20%;
+    padding: 10px;
+    margin-left: 255px;
+    cursor: pointer;
+    background: #C8D5CB;
+    border: 0;
+    outline: none;
+    position: relative;
+    top:15px;
+    /*border-radius: 30px;*/
+}
+.submit-btn:hover{
+    background-color: black;
+    color: white;
+}
+.how{
+    margin-left: 10px;
+    padding-left:30px ;
+}
+.rate > input{
+    display: none;
+}
+.rate{
+    display: inline-block;;
+    border: 0;
+}
+.rate > label{
+    float: right;
+}
+.rate > label:before{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin:10px;
+    padding:0.3rem .2rem;
+    cursor: pointer;
+}
+.rate .half:before{
+    content: "\f089";
+    position: absolute;
+    padding-right: 0;
+}
+input:checked ~ label, label:hover ~ label{
+    color: #ffb503;
+}
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+    color: #cc9000;
+}
+.rating-star i{
+    color: #ffb503 !important;
+}
+  

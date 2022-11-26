@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>HypeTicket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="static\home.css">
+</head>
+<body>
+    <header>
+        <div class="icons">
+            <a href="#" class="fas fa-ticket"></a>
+        </div>
+        <a href="#" class="logo">HypeTicket<span>&nbsp;<i class="fa fa-diamond" aria-hidden="true"></i></span></a>
+    
+        <nav class="navbar">
+            <a href="#home">Welcome</a>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#review">Reviews</a>
+            <a href="#contactus">Contact</a>
+            <a href="account.html" target="_self">Account <i class="fa fa-bell" aria-hidden="true"></i></a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fas fa-ticket"></a>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Get Tickets Easily</h3><br>
+            <span><i>A QR-Code Based System</i></span><br><br><br><hr><br><br>
+            <p>Wish to book your tickets to some of the most culturally rich and historically adorned places in our country!?<br><br><br>
+            Click below to get started <i class="fa fa-arrow-circle-down" aria-hidden="true"></i></p>
+            <a href="account.html" class="btn">Login / Sign-Up</a>
+        </div>     
+    </section>
+    <section class="about" id="about">
+        <h1 class="heading"><strong></i><span>About</span> Us</strong></h1>
+        <div class="row">
+            <div class="imgSlider">
+            </div>
+            <div class="content">
+                <h3>why choose us?</h3>
+                <p>HypeTicket is an initiative undertaken to generate electronic tickets which are QR Code based. <br>It is an Online Web application aimed at people who are looking to visit 
+                    Monument and Historical Places.</p>
+                <p>Our objective here is to reduce the hassle of printing out tickets on site as well as allow the staff at Heritage places to do better crowd management. This system will not only 
+                    save your time in queues but also reduce paper wastage as a bonus.
+                </p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <section class="iconbox">
+        <div class="icon">
+            <img src="static\icons8-qr-code.gif" alt="">
+            <div class="info">
+                <h3>QR Code Ticket</h3>
+            </div>
+        </div>
+        <div class="icon">
+            <img src="static\icons8-download.gif" alt="">
+            <div class="info">
+                <h3>Downloadable Files</h3>
+            </div>
+        </div>
+        <div class="icon">
+            <img src="static\icons8-debit-card.gif" alt="">
+            <div class="info">
+                <h3>Online Payments</h3>
+            </div>
+        </div>
+        <div class="icon">
+            <img src="static\icons8-people.gif" alt="">
+            <div class="info">
+                <h3>Check Capacity</h3>
+            </div>
+        </div>
+    </section>
+    <section class="contactus" id="contactus">
+        <h1 class="heading"><span>Contact</span> Us</h1>
+        <div class="row">
+            <p class="para"><i>For all enquries, please get in touch by using the form below...</i></p>
+            <form method="POST" class="formcon" action="sent">
+                {% csrf_token %}
+                {%if error%}
+                <p class="alert">
+                    <div class="alert alert-danger" role="alert">
+                        {{error}}
+                    </div>
+                </p>
+                {%endif%}
+                {%if success%}
+                <p class="alert">
+                    <div class="alert alert-success" role="alert">
+                        {{success}}
+                    </div>
+                </p>
+                {%endif%}
+                <p class="formpara">How can we Help you?</p>
+                <input required type="text" placeholder="Name" class="box" name="name">
+                <input required type="email" placeholder="Email" class="box" id="conemail" name="email">
+                <input required type="number" placeholder="Number" class="box" name="number">
+                <textarea required name="message" class="box" placeholder="Message" cols="30" rows="5"></textarea>
+                <input type="submit" placeholder="Send Message" class="btn" value="Send Message">
+            </form>
+            <div class="conimg">
+                <img src="static\Meet the team.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Reviews</a>
+                <a href="#">contact</a>
+            </div>
+            <div class="coi">
+                <h3>Covering Cities</h3>
+                <a href="#">Mumbai</a>
+                <a href="#">New Delhi</a>
+                <a href="#">Agra</a>
+                <a href="#">Jaipur</a>
+                <a href="#">Hyderabad</a>
+            </div>
+            <div class="coi">
+                <h3>contact info</h3>
+                <a href="#">+91 1234567890</a>
+                <a href="#">hypeticket.support@gmail.com</a>
+                <a href="#">Mumbai, india - 400037</a>
+            </div>
+        </div>
+        <div class="credit"> created by <span> HypeTicket Team </span> | <i class="fa fa-copyright" aria-hidden="true"></i> all rights reserved </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

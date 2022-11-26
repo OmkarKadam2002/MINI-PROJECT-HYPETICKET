@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="static\search.css">
+</head>
+<body>
+    <div class="heading">
+        <h2 align="center"> <i class="fas fa-monument    "></i>&nbsp;Select Place To Visit! <i class="fas fa-monument    "></i></h2>
+    </div>
+    <div class="main-body">
+    <div class="container">    
+        <div class="row mt-2">
+            <div class="col-12 mb-3 col-md-6" >
+                <select class="form-select" id="filterByColor" onchange="searchFilter()" style="background-color:#C8D5CB;">
+                    <option value="" selected>Filter by City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Aurangabad">Aurangabad</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4 gridCards">
+            <form id="place-card" method="POST" action="bookticket" class="input" target="_blank" >
+                {% csrf_token %}
+            <div class="col Mumbai">
+                {% csrf_token %}
+                <div class="card h-100">
+                    <img src="static\card1.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        {% csrf_token %}
+                        <h5 class="card-title">Elephanta Caves</h5>
+                        <p class="card-text">Mumbai, Maharashtra</p><br>
+                        <p class="card-text">Timings: 7:00 AM - 7:00 PM, Tue - Sun</p><br>
+                        <p class="card-text">How to Reach: Ferry From Gateway of India</p><br>
+                        <button name="bookticketbutton" type="submit" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link" value="1">Book Tickets</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+            <div class="col Mumbai">
+                <div class="card h-100">
+                    <img src="static\card2.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Kanheri Caves</h5>
+                        <p class="card-text">Mumbai, Maharashtra</p><br>
+                        <p class="card-text">Timings: 6:00 AM - 6:00 PM, Mon - Sun</p><br>
+                        <p class="card-text">How to Reach: Local Trains</p><br>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Aurangabad">
+                <div class="card h-100">
+                    <img src="static\card3.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Ajanta & Ellora Caves</h5>
+                        <p class="card-text">Aurangabad, Maharashtra</p><br>
+                        <p class="card-text">Timings: 9:00 AM - 5:00 PM, Tue - Sun</p><br>
+                        <p class="card-text">How to Reach: Taxis/Rentals from Aurangabad</p><br>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Hyderabad">
+                <div class="card h-100">
+                    <img src="static\card4.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Golconda Fort</h5>
+                        <p class="card-text">Hyderabad, Telagana</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Agra">
+                <div class="card h-100">
+                    <img src="static\card5.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Taj Mahal</h5>
+                        <p class="card-text">Agra, Uttar Pradesh</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Agra">
+                <div class="card h-100">
+                    <img src="static\card6.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Agra Fort</h5>
+                        <p class="card-text">Agra, Uttar Pradesh</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Agra">
+                <div class="card h-100">
+                    <img src="static\card7.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Fatehpur Sikri </h5>
+                        <p class="card-text">Agra, Uttar Pradesh</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Jaipur">
+                <div class="card h-100">
+                    <img src="static\card8.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Hawa Mahal</h5>
+                        <p class="card-text">Jaipur, Rajasthan</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Jaipur">
+                <div class="card h-100">
+                    <img src="static\card9.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">City Palace</h5>
+                        <p class="card-text">Jaipur, Rajasthan</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Jaipur">
+                <div class="card h-100">
+                    <img src="static\card10.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Jaigarh Fort</h5>
+                        <p class="card-text">Jaipur, Rajasthan</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Jaipur">
+                <div class="card h-100">
+                    <img src="static\card11.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Jantar Mantar</h5>
+                        <p class="card-text">Mumbai, Maharashtra</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Delhi">
+                <div class="card h-100">
+                    <img src="static\card12.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Red Fort</h5>
+                        <p class="card-text">Delhi</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Delhi">
+                <div class="card h-100">
+                    <img src="static\card13.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Qutub Minar</h5>
+                        <p class="card-text">New Delhi, Delhi</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Delhi">
+                <div class="card h-100">
+                    <img src="static\card14.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Safdarjung’s Tomb</h5>
+                        <p class="card-text">New Delhi, Delhi</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col Delhi">
+                <div class="card h-100">
+                    <img src="static\card15.jpg" class="card-img-top"
+                        style="width:100% ; height:15vw ; object-fit:cover;" alt="...">
+                    <div class="card-body  d-flex flex-column" style="background-color:#C8D5CB;">
+                        <h5 class="card-title">Humayun's Tomb</h5>
+                        <p class="card-text">New Delhi, Delhi</p>
+                        <a href="#" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link">Book Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- This is Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+    <!-- this is javascript-->
+    <script>
+        var searchFilter = () => {
+            let selectedColor = document.getElementById("filterByColor").value;
+            const cards = document.getElementsByClassName("col");
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].querySelector(".card-body");
+                if (cards[i].classList.contains(selectedColor) || selectedColor=="") {
+                    cards[i].classList.remove("d-none");
+                } else {
+                    cards[i].classList.add("d-none");
+                }
+            }
+        }
+    </script>
+    </script>
+</body>
+</html>
