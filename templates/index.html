@@ -85,20 +85,6 @@
             <p class="para"><i>For all enquries, please get in touch by using the form below...</i></p>
             <form method="POST" class="formcon" action="sent">
                 {% csrf_token %}
-                {%if error%}
-                <p class="alert">
-                    <div class="alert alert-danger" role="alert">
-                        {{error}}
-                    </div>
-                </p>
-                {%endif%}
-                {%if success%}
-                <p class="alert">
-                    <div class="alert alert-success" role="alert">
-                        {{success}}
-                    </div>
-                </p>
-                {%endif%}
                 <p class="formpara">How can we Help you?</p>
                 <input required type="text" placeholder="Name" class="box" name="name">
                 <input required type="email" placeholder="Email" class="box" id="conemail" name="email">

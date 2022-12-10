@@ -25,12 +25,12 @@ input {
     background: transparent;
 }
 .label1{
-    float:left;
+    /*float:left;*/
     font-size: 20px;
     margin-right: 100px;
 }
 .label2{
-    float:left;
+    /*float:left;*/
     font-size: 20px;
     margin-right: 75px;
 }
@@ -57,4 +57,14 @@ input {
     margin-left: 470px;
     width:250px;
     height:250px;
+}
+.heading{
+    background-color: #5B868D;
+    padding: 15px;
+    margin: 10px;
+    color:#3f2b31;
+    height: 75px;
+}
+.details{
+    padding: 10px;
 }

@@ -51,8 +51,10 @@ class Tickets(models.Model):
     username=models.CharField(max_length=100,default='abc')
     qr_code=models.ImageField(upload_to='qr-codes',blank=True)
 
-    
-
+class AccSitAd(models.Model):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    monument_name = models.TextField(default='abc')
     
 
 

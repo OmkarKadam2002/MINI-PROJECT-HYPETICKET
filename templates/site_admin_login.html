@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Admin Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+    <link rel="stylesheet" href="static\site_admin_login.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+    <div class="heading">
+        <h3><i class="fa fa-ticket" aria-hidden="true"></i> HypeTicket Site Admin Login <i class="fa fa-ticket" aria-hidden="true"></i></h3>
+    </div>
+    <form id="log" method="POST" action="siteadminsignin" class="input-group">
+        {% csrf_token %}
+        <input required type="text" class="input-field" placeholder="Enter Username" required name="username">
+        <input required type="password" class="input-field" placeholder="Enter Password" required name="password">
+        <!---<a href="forgotpassword.html" target="_self" class="check-box">Forgot Password?</a>--->
+        <button type="submit" class="submit-btn">Login</button>
+    </form>
+</div> 
+    </div>
+</body>
+</html>

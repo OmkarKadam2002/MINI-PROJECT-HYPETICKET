@@ -11,32 +11,36 @@
 </head>
 <body>
     <div class="main-body">
+        <div class="heading">
         <h2 align="center">Visiting Ticket</h2><br><br>
+    </div>
+    <div class="details">
         {% csrf_token %}
         {% for x in mymembers %}
         <p class="label1" id="value">Name:&nbsp;{{ x.name }}</p>
         <input type="text" class="name" readonly value="Name:{{ x.name }}" style="display:none;">
-        <p class="label">Number:&nbsp;{{ x.number }}</p><br>
+        <p class="label">Number:&nbsp;{{ x.number }}</p>
         <input type="text" class="number" readonly value="Number:{{ x.number }}" style="display:none;">
-        <p class="label">Email:&nbsp;{{ x.email_id }}</p><br>
+        <p class="label">Email:&nbsp;{{ x.email_id }}</p>
         <input type="text" class="email" readonly value="Email:{{ x.email_id }}" style="display:none;">
         <p class="label1">Monument:&nbsp;{{ x.monument_name }}</p>
         <input type="text" class="monu_name" readonly value="Monument:{{ x.monument_name }}" style="display:none;">
-        <p class="label">Location:&nbsp;{{ x.location }}</p><br>
+        <p class="label">Location:&nbsp;{{ x.location }}</p>
         <input type="text" class="location" readonly value="Location:{{ x.location }}" style="display:none;">
-        <p class="label">Date:&nbsp;{{ x.date }}</p><br>
+        <p class="label">Date:&nbsp;{{ x.date }}</p>
         <input type="text" class="date" readonly value="Date:{{ x.date }}" style="display:none;">
-        <p class="label2">No. of People:&nbsp;{{ x.count_ind }}</p>
+        <p class="label2">No. of People:&nbsp;{{ x.count_ind }}
         <input type="text" class="count_ind" readonly value="Indian Citizens:{{ x.count_ind }}" style="display:none;">
         <p class="label2">No. of Foreign Nationals:&nbsp;{{ x.count_for }}</p>
         <input type="text" class="count_for" readonly value="Foreign Nationals:{{ x.count_for }}" style="display:none;">
-        <p class="label">No. of Under 15 Children:&nbsp;{{ x.count_free }}</p><br>
+        <p class="label">No. of Under 15 Children:&nbsp;{{ x.count_free }}</p>
         <input type="text" class="count_free" readonly value="Children Under 15:{{ x.count_free }}" style="display:none;">
-        <p class="label">Total Price(Rs.):&nbsp;{{ x.price }}</p><br>
+        <p class="label">Total Price(Rs.):&nbsp;{{ x.price }}</p>
         <input type="text" class="price" readonly value="Total(Rs.):{{ x.price }}" style="display:none;">
         <div class="qr-code" ></div>
         <p style="font-size:18px;"><i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;By Being in posession of this ticket you agree that you will adhere to the policies of the jurisdiction at the monument</p>
         {% endfor %}
+    </div>
         <button class="submit-btn">Generate QR Code</button>
         <div class="qr-img" align="center">
             <img src="" alt="">

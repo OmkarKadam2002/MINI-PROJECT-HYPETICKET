@@ -38,6 +38,7 @@ label, input{
     border-bottom: 1px solid #203f44;
     padding: 10px 0;
     margin: 5px 0;
+    width: 300px;
 }
 .submit-btn {
     width: 10%;

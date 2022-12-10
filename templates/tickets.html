@@ -8,14 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     <link rel="stylesheet" href="static\tickets.css">
+    <style>
+                table, th, td {
+        border: 1px solid black;
+        }
+        th,td {
+            padding: 10px;
+        }
+        button{
+            padding: 10px;
+            background-color:black;
+            color: white;
+        }
+        table{
+            margin-left: 200px;
+            background-color: #C8D5CB;
+        }
+    </style>
 </head>
 <body>
     <div class="heading">
         <h2 align="center"><i class="fa fa-ticket" aria-hidden="true"></i> &nbsp;Your Tickets&nbsp;<i class="fa fa-ticket" aria-hidden="true"></i></h2>
     </div>
     <div class="main-container">
-        <div class="row row-cols-1 row-cols-md-3 g-4 gridCards">
-            <form id="place-card" method="POST" action="viewticket" class="input" target="_blank" >
+        <div >
+            <!---<form id="place-card" method="POST" action="viewticket" class="input" target="_blank" >
                 {% csrf_token %}
             <div class="col Mumbai">
                 {% csrf_token %}
@@ -27,13 +44,32 @@
                         <h5 class="card-title">{{ x.monument_name }}</h5>
                         <p class="card-text">{{ x.location }}</p>
                         <p class="card-text">Date: {{ x.date }}</p>
-                        <button name="viewticket" type="submit" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link" >View Ticket</button><br><br>
+                        <button name="viewticket" type="submit" class="btn btn-primary btn-dark align-self-end mt-auto stretched-link" value="{{ x.id }}">View Ticket</button><br><br>
                     {% endfor %}
                     </div>
                 </div>
             </div>
-        </form>
+        </form>--->
         </div>
+        <table>
+            <tr>
+              <th>Monument Name</th>
+              <th>Location</th>
+              <th>Date</th>
+              <th>View Ticket</th>
+            </tr>
+            <form  method="POST" action="viewticket" class="input" target="_blank">
+            {% csrf_token %}
+            {% for x in mymembers %}
+            <tr>
+              <td>{{ x.monument_name }}</td>
+              <td>{{ x.location }}</td>
+              <td>{{ x.date }}</td>
+              <td><button name="viewticket" type="submit" value="{{ x.id }}">View Ticket</button></td>
+              {% endfor %}
+            </tr>
+        </form>
+          </table>
     </div>
 </body>
 </html>
